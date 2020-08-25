@@ -1,0 +1,51 @@
+﻿As I have two conttrolers when you run the project you get a base URL such as https://localhost:44399/
+
+using the api/Controler model you would use
+
+https://localhost:44399/api/HelloApi
+https://localhost:44399/api/slang/[optionalId]
+
+test case 1 Basic Hello world
+
+-Execute Basic hellow world API
+-Run project And modify URL to include api/HelloApi
+
+System should return
+
+<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Hello World API Get Method by Jeremy Martin</string>
+
+Test Case 2 Hello World Data Set
+
+-Execute test case to see all advanced slang options
+-Run project and modify URL to Include api/slang
+
+System should return
+
+<ArrayOfSlang xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/HelloWorldAPI.Models">
+<Slang>
+<Id>0</Id>
+<Saying>Hello World</Saying>
+</Slang>
+<Slang>
+<Id>1</Id>
+<Saying>Hi Peeps</Saying>
+</Slang>
+<Slang>
+<Id>2</Id>
+<Saying>Howdy Folks</Saying>
+</Slang>
+<Slang>
+<Id>3</Id>
+<Saying>What's Up</Saying>
+</Slang>
+</ArrayOfSlang>
+
+Test Case 2B Search dataset by ID
+then modify URL again to single out a selection by adding /[id] (2 in this example)
+
+system should return 
+
+<Slang xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/HelloWorldAPI.Models">
+<Id>2</Id>
+<Saying>Howdy Folks</Saying>
+</Slang>
